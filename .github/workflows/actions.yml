@@ -1,6 +1,15 @@
+# Events that trigger workflows
+# https://docs.github.com/en/actions/reference/events-that-trigger-workflows
 name: Actions Workflow
 
-on: [push, pull_request]
+on:
+  schedule:
+    # crontab guru: https://crontab.guru
+    - cron: "0/5 * * * *"
+    - cron: "0/6 * * * *"
+    # push:
+  pull_request:
+    types: [closed, assigned, opened, reopened]
 jobs:
   run-github-actions:
     runs-on: ubuntu-latest
@@ -27,5 +36,5 @@ jobs:
         uses: actions/hello-world-javascript-action@v1
         with:
           who-to-greet: John
-      - name: Log greeting time
+      - name: Log greeting time1
         run: echo "${{steps.greet.outputs.time}}"
