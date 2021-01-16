@@ -5,10 +5,12 @@ name: Actions Workflow
 
 on:
   schedule:
-    - cron: "*/5 * * * *"
-    - cron: "*/6 * * * *"
+    - cron: "0/5 * * * *"
+    - cron: "0/6 * * * *"
   pull_request:
     types: [closed, assigned, opened, reopened]
+  push
+
 jobs:
   run-github-actions:
     runs-on: ubuntu-latest
