@@ -1,13 +1,12 @@
 # Events that trigger workflows
 # https://docs.github.com/en/actions/reference/events-that-trigger-workflows
+# crontab guru: https://crontab.guru
 name: Actions Workflow
 
 on:
   schedule:
-    # crontab guru: https://crontab.guru
     - cron: "0/5 * * * *"
     - cron: "0/6 * * * *"
-    # push:
   pull_request:
     types: [closed, assigned, opened, reopened]
 jobs:
