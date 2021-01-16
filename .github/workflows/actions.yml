@@ -9,7 +9,7 @@ on:
     - cron: "0/6 * * * *"
   pull_request:
     types: [closed, assigned, opened, reopened]
-  push
+  push:
 
 jobs:
   run-github-actions:
