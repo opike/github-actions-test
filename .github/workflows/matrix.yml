@@ -4,9 +4,9 @@ on: push
 jobs:
   node-version:
     strategy:
-      matrix:
       fail-fast: true
       max-parallel: 3
+      matrix:
         os: [macos-latest, ubuntu-latest, windows-latest]
         node_version: [6,8,10]
         include:
