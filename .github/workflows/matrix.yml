@@ -5,10 +5,10 @@ jobs:
   node-version:
     strategy:
       matrix:
+      fail-fast: true
+      max-parallel: 3
         os: [macos-latest, ubuntu-latest, windows-latest]
         node_version: [6,8,10]
-        fail-fast: true
-        max-parallel: 3
         include:
           - os: ubuntu-latest
             node_version: 8
