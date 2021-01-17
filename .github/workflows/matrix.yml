@@ -3,6 +3,11 @@ on: push
 
 jobs:
   node-version:
+    strategy:
+      matrix:
+        node_version: [6,8,10]
+      fail-fast: true
+      max-parallel: 3
     runs-on: ubuntu-latest
     steps:
       - name: Log node version
