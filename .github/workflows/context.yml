@@ -45,11 +45,11 @@ jobs:
         env:
           GITHUB_STUFF: ${{ toJson(github) }}
           GITHUB_STUFF2: ${{ toJson(github.event) }}
+          GITHUB_STUFF3: ${{ toJson(github.event.action ) }}
         run: |
           echo "github.event.pull_request.number"
           echo "GITHUB_REF"
           echo $GITHUB_REF
           echo "GITHUB_SHA"
-          echo $GITHUB_SHA
-          echo $GITHUB_STUFF
-          echo $GITHUB_STUFF2
+          echo $GITHUB_STUFF3
+          echo $GITHUB_EVENT_PATH
