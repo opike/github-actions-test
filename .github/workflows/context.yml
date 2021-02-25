@@ -13,7 +13,7 @@ jobs:
           echo ${{ format('Hello {0} {1} {2}', 'World', '!', '!') }}
   one:
     runs-on: ubuntu-latest
-    if: github.event_name == 'push'
+#    if: github.event_name == 'push'
     steps:
       - name: Dump GitHub context
         env:
@@ -42,10 +42,14 @@ jobs:
           MATRIX_CONTEXT: ${{ toJson(matrix) }}
         run: echo "$MATRIX_CONTEXT"
       - name: Push event data
+        env:
+          GITHUB_STUFF: ${{ toJson(github) }}
+          GITHUB_STUFF2: ${{ toJson(github.event) }}
+          GITHUB_STUFF3: ${{ toJson(github.event.action) }}
         run: |
           echo "github.event.pull_request.number"
-          echo ${{ github.event.pull_request.number }}
           echo "GITHUB_REF"
           echo $GITHUB_REF
           echo "GITHUB_SHA"
-          echo $GITHUB_SHA
+          echo $GITHUB_STUFF3
+          echo $GITHUB_EVENT_PATH
