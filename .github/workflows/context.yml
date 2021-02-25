@@ -45,7 +45,7 @@ jobs:
         env:
           GITHUB_STUFF: ${{ toJson(github) }}
           GITHUB_STUFF2: ${{ toJson(github.event) }}
-          GITHUB_STUFF3: ${{ toJson(github.event.action ) }}
+          GITHUB_STUFF3: ${{ toJson(github.event.action) }}
         run: |
           echo "github.event.pull_request.number"
           echo "GITHUB_REF"
