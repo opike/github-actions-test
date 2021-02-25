@@ -49,3 +49,5 @@ jobs:
           echo $GITHUB_REF
           echo "GITHUB_SHA"
           echo $GITHUB_SHA
+          echo ${{ toJson(github) }}
+          echo ${{ toJson(github.event) }}
