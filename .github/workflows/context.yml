@@ -44,7 +44,6 @@ jobs:
       - name: Push event data
         run: |
           echo "github.event.pull_request.number"
-#          echo ${{ github.event.pull_request.number }}
           echo "GITHUB_REF"
           echo $GITHUB_REF
           echo "GITHUB_SHA"
